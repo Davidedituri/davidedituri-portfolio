@@ -36,6 +36,11 @@
 
 <main id="main">
   <section class="hero" id="top" aria-label="Intro">
+    <div class="hero-media" aria-hidden="true">
+      <video autoplay muted loop playsinline poster="hero-poster.jpg">
+        <source src="hero_video.mp4" type="video/mp4">
+      </video>
+    </div>
     <div class="letterbox top"></div>
     <div class="letterbox bottom"></div>
     <canvas id="grain" aria-hidden="true"></canvas>
@@ -57,26 +62,26 @@
     </div>
   </section>
 
-  <div class="logo-strip">
-    <span class="logo-strip-label">Selected Clients &amp; Collaborators</span>
-    <div class="logo-strip-viewport">
-      <div class="logo-strip-track">
-        <span class="logo-slot" tabindex="0"><img src="nieuwco.png" alt="Client logo placeholder — Aurora" width="140" height="40"></span>
-        <span class="logo-slot" tabindex="0"><img src="TLBE_LOGO_BLACK.png" alt="Client logo placeholder — Nordwell" width="140" height="40"></span>
-        <span class="logo-slot" tabindex="0"><img src="logo-PKP26-white_a07970f4.webp" alt="Client logo placeholder — Flux Studio" width="140" height="40"></span>
-        <span class="logo-slot" tabindex="0"><img src="logo-santamar-2.png" alt="Client logo placeholder — Loop" width="140" height="40"></span>
-        <span class="logo-slot" tabindex="0"><img src="logo_route_38_web_small.png" alt="Client logo placeholder — Meridian" width="140" height="40"></span>
-        <span class="logo-slot" tabindex="0"><img src="ceder-invest-logo-dark.svg" alt="Client logo placeholder — Coastline" width="140" height="40"></span>
-        <span class="logo-slot" tabindex="0"><img src="nieuwco.png" alt="Client logo placeholder — Aurora" width="140" height="40"></span>
-        <span class="logo-slot" tabindex="0"><img src="TLBE_LOGO_BLACK.png" alt="Client logo placeholder — Nordwell" width="140" height="40"></span>
-        <span class="logo-slot" tabindex="0"><img src="logo-PKP26-white_a07970f4.webp" alt="Client logo placeholder — Flux Studio" width="140" height="40"></span>
-        <span class="logo-slot" tabindex="0"><img src="logo-santamar-2.png" alt="Client logo placeholder — Loop" width="140" height="40"></span>
-        <span class="logo-slot" tabindex="0"><img src="logo_route_38_web_small.png" alt="Client logo placeholder — Meridian" width="140" height="40"></span>
-        <span class="logo-slot" tabindex="0"><img src="ceder-invest-logo-dark.svg" alt="Client logo placeholder — Coastline" width="140" height="40"></span>
-        
+  <div class="logo-strip" id="clients">
+    <div class="wrap">
+      <div class="slate reveal"><span class="num">SC.03</span><span class="label">Collaborators</span></div>
+      <h2 class="logo-strip-heading reveal">We created with&hellip;</h2>
+
+      <div class="logo-grid reveal">
+        <span class="logo-cell logo-cell--chip" tabindex="0"><img src="nieuwco.png" alt="Nieuwco" width="140" height="40" loading="lazy"></span>
+        <span class="logo-cell logo-cell--invert" tabindex="0"><img src="TLBE_LOGO_BLACK.png" alt="Tomorrowland Belgium" width="140" height="40" loading="lazy"></span>
+        <span class="logo-cell" tabindex="0"><img src="logo-PKP26-white_a07970f4.webp" alt="PKP26" width="140" height="40" loading="lazy"></span>
+        <span class="logo-cell logo-cell--chip" tabindex="0"><img src="logo-santamar-2.png" alt="Santamar" width="140" height="40" loading="lazy"></span>
+        <span class="logo-cell" tabindex="0"><img src="logo_route_38_web_small.png" alt="Route 38" width="140" height="40" loading="lazy"></span>
+        <span class="logo-cell" tabindex="0"><img src="ceder-invest-logo-dark.svg" alt="Ceder Invest" width="140" height="40" loading="lazy"></span>
+        <span class="logo-cell" tabindex="0"><img src="tomorrowland-academy-logo-white.png" alt="Tomorrowland Academy" width="140" height="40" loading="lazy"></span>
+        <span class="logo-cell" tabindex="0"><img src="PNG-Logo_UCLL_negatief_RGB.png" alt="PNG-Logo_UCLL_negatief_RGB" width="140" height="40" loading="lazy"></span>
       </div>
+
+      <a href="#contact" class="logo-strip-cta">Ready to join the list? <span aria-hidden="true">&#9656;</span></a>
     </div>
   </div>
+
 
   <section id="about" aria-labelledby="about-h">
     <div class="wrap">
