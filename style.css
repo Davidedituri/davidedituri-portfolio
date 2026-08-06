@@ -172,22 +172,14 @@ h1,h2,h3{ font-family:var(--font-display); font-weight:700; margin:0; text-wrap:
   width:100%; height:100%; object-fit:cover; display:block;
 }
 .hero-media::after{
+  /* Fixed cinematic scrim — always dark enough for light text, regardless of
+     site theme (the video itself doesn't get lighter/darker with --bg/--fg,
+     so this shouldn't either). */
   content:""; position:absolute; inset:0;
   background:
-    linear-gradient(180deg, rgba(11,12,14,0.35) 0%, rgba(11,12,14,0.15) 35%, rgba(11,12,14,0.55) 75%, rgba(11,12,14,0.85) 100%),
-    linear-gradient(90deg, rgba(11,12,14,0.3) 0%, transparent 45%);
-}
-:root[data-theme="light"] .hero-media::after{
-  background:
-    linear-gradient(180deg, rgba(11,12,14,0.5) 0%, rgba(11,12,14,0.25) 35%, rgba(11,12,14,0.6) 75%, rgba(11,12,14,0.9) 100%),
-    linear-gradient(90deg, rgba(11,12,14,0.35) 0%, transparent 45%);
-}
-@media (prefers-color-scheme: light){
-  :root:not([data-theme="dark"]) .hero-media::after{
-    background:
-      linear-gradient(180deg, rgba(11,12,14,0.5) 0%, rgba(11,12,14,0.25) 35%, rgba(11,12,14,0.6) 75%, rgba(11,12,14,0.9) 100%),
-      linear-gradient(90deg, rgba(11,12,14,0.35) 0%, transparent 45%);
-  }
+    linear-gradient(180deg, rgba(8,9,11,0.52) 0%, rgba(8,9,11,0.3) 32%, rgba(8,9,11,0.64) 72%, rgba(8,9,11,0.92) 100%),
+    linear-gradient(90deg, rgba(8,9,11,0.42) 0%, rgba(8,9,11,0.06) 42%, transparent 60%),
+    radial-gradient(120% 90% at 15% 100%, rgba(8,9,11,0.35), transparent 60%);
 }
 
 .letterbox{
@@ -203,8 +195,8 @@ h1,h2,h3{ font-family:var(--font-display); font-weight:700; margin:0; text-wrap:
   padding:var(--space-6) var(--space-5) 0;
 }
 @media(min-width:768px){ .hero-hud{ padding:var(--space-7) var(--space-7) 0; } }
-.hud-item{ font-family:var(--font-mono); font-size:.72rem; letter-spacing:.08em; color:var(--fg-muted); }
-.hud-rec{ display:flex; align-items:center; gap:var(--space-2); color:var(--fg); }
+.hud-item{ font-family:var(--font-mono); font-size:.72rem; letter-spacing:.08em; color:rgba(249,246,238,.72); }
+.hud-rec{ display:flex; align-items:center; gap:var(--space-2); color:#F9F6EE; }
 .hud-rec .blink{ width:7px; height:7px; border-radius:50%; background:#E5484D; animation:blink 1.4s step-start infinite; }
 @keyframes blink{ 50%{ opacity:.15; } }
 #timecode{ font-variant-numeric:tabular-nums; }
@@ -214,17 +206,28 @@ h1,h2,h3{ font-family:var(--font-display); font-weight:700; margin:0; text-wrap:
   padding:var(--space-6) var(--space-5);
 }
 @media(min-width:768px){ .hero-main{ padding:var(--space-6) var(--space-7); } }
-.hero-role{ margin-bottom:var(--space-4); }
+
+/* Hero text sits on a video, not on --bg/--fg, so it gets a fixed light
+   treatment here instead of inheriting theme colors (which flip dark on
+   the default/light theme and become unreadable over the scrim). */
+.hero-role{ margin-bottom:var(--space-4); color:rgba(249,246,238,.82); }
+.hero-role .dot{ box-shadow:0 0 10px rgba(0,0,0,.45); }
 .hero-name{
   font-size:clamp(2.6rem, 10vw, 7.5rem); line-height:0.96; text-transform:uppercase;
+  color:#F9F6EE;
+  text-shadow:0 2px 28px rgba(0,0,0,.4), 0 1px 3px rgba(0,0,0,.3);
 }
 .hero-tagline{
-  margin-top:var(--space-5); font-size:clamp(1.15rem,2.6vw,1.6rem); max-width:38ch; color:var(--fg-muted);
+  margin-top:var(--space-5); font-size:clamp(1.15rem,2.6vw,1.6rem); max-width:38ch;
+  color:rgba(249,246,238,.88);
+  text-shadow:0 1px 18px rgba(0,0,0,.32);
 }
 .hero-cta{ display:flex; flex-wrap:wrap; gap:var(--space-4); margin-top:var(--space-7); }
+.hero-cta .btn-ghost{ color:#F9F6EE; border-color:rgba(249,246,238,.4); }
+.hero-cta .btn-ghost:hover{ border-color:var(--accent); color:var(--accent); background:rgba(249,246,238,.08); }
 .hero-shoton{
   margin-top:var(--space-8); font-family:var(--font-mono); font-size:.72rem; letter-spacing:.1em;
-  color:var(--fg-muted); text-transform:uppercase;
+  color:rgba(249,246,238,.58); text-transform:uppercase;
 }
 
 canvas#grain{ position:absolute; inset:0; z-index:2; opacity:.05; pointer-events:none; }
