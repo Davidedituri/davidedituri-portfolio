@@ -1,0 +1,626 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Davide Di Turi | Marketeer, Content Creator &amp; Videographer</title>
+<meta name="description" content="Portfolio of Davide Di Turi: creative hybrid between marketing, content creation and videography. Based in Limburg, Belgium.">
+<meta property="og:title" content="Davide Di Turi | Marketeer, Content Creator &amp; Videographer">
+<meta property="og:description" content="Strategist by trade, storyteller by nature. Video, content and marketing from Limburg, Belgium.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0d0d0d">
+<link rel="stylesheet" href="style.css">
+<style>
+  /* ===== Refresh + language toggle (works on top of style.css) ===== */
+  html { scroll-behavior: smooth; }
+  .lang-toggle {
+    display: inline-flex; align-items: center; gap: 2px;
+    margin-left: 18px; padding: 3px;
+    border: 1px solid rgba(242,237,228,.28); border-radius: 999px;
+    background: rgba(13,13,13,.35); backdrop-filter: blur(8px);
+    font: 400 11px/1 var(--font-mono);
+    letter-spacing: .12em;
+  }
+  .lang-toggle button {
+    appearance: none; border: 0; cursor: pointer;
+    padding: 7px 11px; border-radius: 999px;
+    background: transparent; color: rgba(242,237,228,.6);
+    font: inherit; letter-spacing: inherit;
+    transition: background .2s, color .2s;
+  }
+  .lang-toggle button:hover { color: var(--fg); }
+  .lang-toggle button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); }
+  .lang-toggle button:focus-visible { outline: 2px solid #F2EDE4; outline-offset: 2px; }
+  .site-header { gap: 12px; }
+  .header-right { display: flex; align-items: center; }
+  @media (max-width: 860px) { .lang-toggle { margin-left: auto; margin-right: 10px; } }
+
+  /* Fresher cards and section rhythm */
+  section { scroll-margin-top: 80px; }
+  .work-card .frame { transition: transform .5s cubic-bezier(.2,.7,.2,1), box-shadow .5s; }
+  .work-card:hover .frame { transform: translateY(-4px); box-shadow: 0 24px 60px -24px rgba(0,0,0,.8); }
+  .work-card .video-thumb { transition: transform .8s cubic-bezier(.2,.7,.2,1), filter .5s; }
+  .work-card:hover .video-thumb { transform: scale(1.04); filter: saturate(1.1); }
+  .work-meta h3 { text-wrap: balance; }
+  .hero-tagline { text-wrap: balance; }
+  .available-pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    margin-top: 22px; padding: 7px 14px; border-radius: 999px;
+    border: 1px solid rgba(242,237,228,.25);
+    font: 400 11px/1 var(--font-mono);
+    letter-spacing: .1em; text-transform: uppercase; color: rgba(242,237,228,.85);
+  }
+  .available-pill::before {
+    content: ""; width: 7px; height: 7px; border-radius: 50%;
+    background: var(--accent); box-shadow: 0 0 0 0 rgba(201,161,90,.6);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse { 70% { box-shadow: 0 0 0 8px rgba(201,161,90,0); } 100% { box-shadow: 0 0 0 0 rgba(201,161,90,0); } }
+  @media (prefers-reduced-motion: reduce) {
+    .available-pill::before { animation: none; }
+    .work-card .frame, .work-card .video-thumb { transition: none; }
+  }
+  .credits .btn-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main" data-i18n="skip">Skip to main content</a>
+
+<header class="site-header" id="siteHeader">
+  <a href="#top" class="logo"><b>DT</b>&nbsp;&mdash; Davide Di Turi</a>
+  <ul class="nav-links">
+    <li><a href="#about" data-i18n="nav_about">About</a></li>
+    <li><a href="#work" data-i18n="nav_work">Work</a></li>
+    <li><a href="#shorts" data-i18n="nav_shorts">Shorts</a></li>
+    <li><a href="#values" data-i18n="nav_values">Values</a></li>
+    <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+  </ul>
+  <div class="header-right">
+    <div class="lang-toggle" role="group" aria-label="Language / Taal">
+      <button type="button" data-lang="nl" aria-pressed="false">NL</button>
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</header>
+
+<nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+  <a href="#about" data-i18n="nav_about">About</a>
+  <a href="#work" data-i18n="nav_work">Work</a>
+  <a href="#shorts" data-i18n="nav_shorts">Shorts</a>
+  <a href="#values" data-i18n="nav_values">Values</a>
+  <a href="#contact" data-i18n="nav_contact">Contact</a>
+</nav>
+
+<main id="main">
+  <section class="hero" id="top" aria-label="Intro">
+    <div class="hero-media" aria-hidden="true">
+      <video autoplay muted loop playsinline poster="hero-poster.jpg">
+        <source src="hero_video.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="letterbox top"></div>
+    <div class="letterbox bottom"></div>
+    <canvas id="grain" aria-hidden="true"></canvas>
+
+    <div class="hero-hud">
+      <span class="hud-item hud-rec"><span class="blink" aria-hidden="true"></span>REC <span id="timecode">00:00:00:00</span></span>
+      <span class="hud-item">SC.01 &mdash; OPEN</span>
+    </div>
+
+    <div class="hero-main wrap">
+      <div class="hero-role eyebrow"><span class="dot"></span><span data-i18n="hero_role">Creative hybrid &middot; Marketeer &middot; Content Creator &middot; Videographer</span></div>
+      <h1 class="hero-name">Davide<br>Di&nbsp;Turi</h1>
+      <p class="hero-tagline quote" data-i18n="hero_tagline">Strategist by trade, storyteller by nature. I build brands worth stopping the scroll for.</p>
+      <div class="hero-cta">
+        <a href="#work" class="btn btn-primary"><span data-i18n="hero_cta1">View portfolio</span> &#9656;</a>
+        <a href="#contact" class="btn btn-ghost" data-i18n="hero_cta2">Get in touch</a>
+      </div>
+      <div class="available-pill" data-i18n="hero_available">Open for new projects &middot; Limburg, Belgium</div>
+      <div class="hero-shoton" data-i18n="hero_shoton">Shot on Sony ZV-E10 &amp; FX3 &middot; 17-70 mm &middot; f/2.8 &middot; 24fps &middot; edited frame by frame</div>
+    </div>
+  </section>
+
+  <div class="logo-strip" id="clients">
+    <div class="wrap">
+      <div class="slate reveal"><span class="num">SC.02</span><span class="label" data-i18n="clients_label">Collaborators</span></div>
+      <h2 class="logo-strip-heading reveal" data-i18n="clients_h">Brands I created with</h2>
+
+      <div class="logo-grid reveal">
+        <span class="logo-cell logo-cell--chip" tabindex="0"><img src="nieuwco.png" alt="Nieuwco" width="140" height="40" loading="lazy"></span>
+        <span class="logo-cell" tabindex="0"><img src="logo-pkp26.webp" alt="PKP26" width="140" height="40" loading="lazy"></span>
+        <span class="logo-cell logo-cell--chip" tabindex="0"><img src="logo-santamar-2.png" alt="Santamar" width="140" height="40" loading="lazy"></span>
+        <span class="logo-cell" tabindex="0"><img src="logo_route_38_web_small.png" alt="Route 38" width="140" height="40" loading="lazy"></span>
+        <span class="logo-cell" tabindex="0"><img src="ceder-invest-logo-dark.svg" alt="Ceder Invest" width="140" height="40" loading="lazy"></span>
+        <span class="logo-cell" tabindex="0"><img src="PNG-Logo_UCLL_negatief_RGB.png" alt="UCLL" width="140" height="40" loading="lazy"></span>
+      </div>
+
+      <a href="#contact" class="logo-strip-cta"><span data-i18n="clients_cta">Ready to join the list?</span> <span aria-hidden="true">&#9656;</span></a>
+    </div>
+  </div>
+
+  <section id="about" aria-labelledby="about-h">
+    <div class="wrap">
+      <div class="slate"><span class="num">SC.03</span><span class="label" data-i18n="about_label">Director's Statement</span></div>
+
+      <div class="about-grid image-variant">
+        <div class="about-visual-block reveal">
+          <div class="about-image">
+            <img src="Davide.jpg" alt="Davide Di Turi working on a laptop in a leather chair" data-i18n-alt="about_img_alt" />
+          </div>
+          <div class="about-quote-container">
+            <p class="about-quote quote" data-i18n="about_quote">"I never picked a lane, so I became the bridge between marketing and content."</p>
+          </div>
+        </div>
+
+        <div class="about-body reveal">
+          <h2 id="about-h" style="font-size:1.1rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:var(--space-5);" data-i18n="about_h">About Davide</h2>
+          <p data-i18n="about_p1">Most people pick a lane. I built a bridge between two. By day I think in funnels, positioning and audience psychology. By night, and often by day too, I'm behind a camera chasing the shot that stops the scroll.</p>
+          <p data-i18n="about_p2">Somewhere between strategy and storyboard I found the work that fits: building brands worth watching, and backing them with the numbers. Strategy gives the work a reason to exist. The camera gives it a reason to be remembered.</p>
+          <p data-i18n="about_p3">When it matters, I run the full chain myself: brief, shoot, edit, grade, launch, measure. Nothing gets lost between the plan and the frame.</p>
+          <div class="about-tags">
+            <span class="tag" data-i18n="tag1">Strategy</span>
+            <span class="tag" data-i18n="tag2">Story</span>
+            <span class="tag" data-i18n="tag3">Craft</span>
+            <span class="tag" data-i18n="tag4">Data</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work" aria-labelledby="work-h">
+    <div class="wrap">
+      <div class="slate"><span class="num">SC.04</span><span class="label" id="work-h" data-i18n="work_label">Portfolio</span></div>
+
+      <div class="work-grid">
+
+        <!-- VIDEO 1: Vincive Media -->
+        <div class="work-card reveal" data-seed="1" data-hue="27">
+          <div class="frame" data-video="https://www.youtube.com/watch?v=Z30029qzMrI" role="button" tabindex="0" aria-label="Play: Launch film, Vincive Media">
+            <canvas></canvas>
+            <img class="video-thumb" alt="" loading="lazy">
+            <span class="ratio-tag">16:9 &middot; Showreel</span>
+            <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+            <div class="play" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="31" stroke="#F2EDE4" stroke-width="1.5"/><path d="M26 20 L46 32 L26 44 Z" fill="#F2EDE4"/></svg></div>
+          </div>
+          <div class="work-meta">
+            <div>
+              <h3>Launch Film &mdash; Vincive Media</h3>
+              <p class="role" data-i18n="r1">Showreel &middot; Own company &middot; Edit</p>
+            </div>
+            <span class="year">2025</span>
+          </div>
+        </div>
+
+        <!-- VIDEO 2: Peugeot Spain -->
+        <div class="work-card reveal" data-seed="2" data-hue="185">
+          <div class="frame" data-video="https://www.youtube.com/watch?v=VkB8honxouk" role="button" tabindex="0" aria-label="Play: Dealership campaign Murcia, Peugeot Spain">
+            <canvas></canvas>
+            <img class="video-thumb" alt="" loading="lazy">
+            <span class="ratio-tag">9:16 &middot; Campaign</span>
+            <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+            <div class="play" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="31" stroke="#F2EDE4" stroke-width="1.5"/><path d="M26 20 L46 32 L26 44 Z" fill="#F2EDE4"/></svg></div>
+          </div>
+          <div class="work-meta">
+            <div>
+              <h3 data-i18n="t2">Dealership Campaign Murcia &mdash; Peugeot Spain</h3>
+              <p class="role" data-i18n="r2">Videography &middot; Campaign</p>
+            </div>
+            <span class="year">2024</span>
+          </div>
+        </div>
+
+        <!-- VIDEO 3: Visit Limburg -->
+        <div class="work-card reveal" data-seed="3" data-hue="27">
+          <div class="frame" data-video="https://youtu.be/-SKoq9Ddj18" role="button" tabindex="0" aria-label="Play: Voerstreek, Visit Limburg">
+            <canvas></canvas>
+            <img class="video-thumb" alt="" loading="lazy">
+            <span class="ratio-tag">16:9 &middot; Promo</span>
+            <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+            <div class="play" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="31" stroke="#F2EDE4" stroke-width="1.5"/><path d="M26 20 L46 32 L26 44 Z" fill="#F2EDE4"/></svg></div>
+          </div>
+          <div class="work-meta">
+            <div>
+              <h3>Voerstreek &mdash; Visit Limburg</h3>
+              <p class="role" data-i18n="r3">Videography &middot; Tourism promo &middot; Edit</p>
+            </div>
+            <span class="year">2025</span>
+          </div>
+        </div>
+
+        <!-- VIDEO 4: Nexus -->
+        <div class="work-card reveal" data-seed="4" data-hue="185">
+          <div class="frame" data-video="https://youtu.be/z6KLUBSwhwM" role="button" tabindex="0" aria-label="Play: Event recap, Nexus Area V">
+            <canvas></canvas>
+            <img class="video-thumb" alt="" loading="lazy">
+            <span class="ratio-tag">9:16 &middot; Event</span>
+            <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+            <div class="play" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="31" stroke="#F2EDE4" stroke-width="1.5"/><path d="M26 20 L46 32 L26 44 Z" fill="#F2EDE4"/></svg></div>
+          </div>
+          <div class="work-meta">
+            <div>
+              <h3>Reel &mdash; Nexus Area V</h3>
+              <p class="role" data-i18n="r4">Event &middot; Content &middot; Reels</p>
+            </div>
+            <span class="year">2026</span>
+          </div>
+        </div>
+
+        <!-- VIDEO 5: Nieuwco -->
+        <div class="work-card reveal" data-seed="5" data-hue="27">
+          <div class="frame" data-video="https://www.youtube.com/watch?v=KLGQ-0KPNqI&t=2s" role="button" tabindex="0" aria-label="Play: New systems launch, Nieuwco">
+            <canvas></canvas>
+            <img class="video-thumb" alt="" loading="lazy">
+            <span class="ratio-tag">4K &middot; Campaign Series</span>
+            <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+            <div class="play" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="31" stroke="#F2EDE4" stroke-width="1.5"/><path d="M26 20 L46 32 L26 44 Z" fill="#F2EDE4"/></svg></div>
+          </div>
+          <div class="work-meta">
+            <div>
+              <h3 data-i18n="t5">Launch New Systems &mdash; Nieuwco</h3>
+              <p class="role" data-i18n="r5">Videography &middot; Color grade &middot; Highlight reel</p>
+            </div>
+            <span class="year">2025</span>
+          </div>
+        </div>
+
+        <!-- VIDEO 6: Ceder Real Estate -->
+        <div class="work-card reveal" data-seed="6" data-hue="185">
+          <div class="frame" data-video="https://vimeo.com/927579917?fl=pl&fe=vl" role="button" tabindex="0" aria-label="Play: Lifestyle campaign, Ceder Real Estate">
+            <canvas></canvas>
+            <img class="video-thumb" alt="" loading="lazy">
+            <span class="ratio-tag">1:1 &middot; Paid Social</span>
+            <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+            <div class="play" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="31" stroke="#F2EDE4" stroke-width="1.5"/><path d="M26 20 L46 32 L26 44 Z" fill="#F2EDE4"/></svg></div>
+          </div>
+          <div class="work-meta">
+            <div>
+              <h3>Growth Sprint &mdash; Ceder Real Estate</h3>
+              <p class="role" data-i18n="r6">Paid media &middot; Lifestyle &middot; Real estate</p>
+            </div>
+            <span class="year">2024</span>
+          </div>
+        </div>
+
+        <!-- VIDEO 7: Hogeschool UCLL -->
+        <div class="work-card reveal" data-seed="7" data-hue="27">
+          <div class="frame" data-video="ucll-internationalisering.mp4" data-poster="ucll-poster.jpg" role="button" tabindex="0" aria-label="Play: Internationalisation, UCLL University of Applied Sciences">
+            <canvas></canvas>
+            <img class="video-thumb" alt="" loading="lazy">
+            <span class="ratio-tag">16:9 &middot; Promo</span>
+            <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+            <div class="play" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="31" stroke="#F2EDE4" stroke-width="1.5"/><path d="M26 20 L46 32 L26 44 Z" fill="#F2EDE4"/></svg></div>
+          </div>
+          <div class="work-meta">
+            <div>
+              <h3 data-i18n="t7">Internationalisation &mdash; UCLL</h3>
+              <p class="role" data-i18n="r7">Videography &middot; Promo &middot; Edit</p>
+            </div>
+            <span class="year">2026</span>
+          </div>
+        </div>
+
+        <!-- ===== NIEUWE VIDEO'S (8-12) =====
+             Titel en jaar worden automatisch van YouTube opgehaald (data-auto-title).
+             Wil je zelf een titel/rol/jaar? Vul de h3, .role en .year in en
+             verwijder data-auto-title van die kaart. -->
+
+        <!-- VIDEO 8 -->
+        <div class="work-card reveal" data-seed="8" data-hue="185" data-auto-title>
+          <div class="frame" data-video="https://youtu.be/BGjFLf14Ptc" role="button" tabindex="0" aria-label="Play video">
+            <canvas></canvas>
+            <img class="video-thumb" alt="" loading="lazy">
+            <span class="ratio-tag">Video</span>
+            <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+            <div class="play" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="31" stroke="#F2EDE4" stroke-width="1.5"/><path d="M26 20 L46 32 L26 44 Z" fill="#F2EDE4"/></svg></div>
+          </div>
+          <div class="work-meta">
+            <div>
+              <h3>&nbsp;</h3>
+              <p class="role" data-i18n="r_new">Videography &middot; Edit</p>
+            </div>
+            <span class="year"></span>
+          </div>
+        </div>
+
+        <!-- VIDEO 9 -->
+        <div class="work-card reveal" data-seed="9" data-hue="27" data-auto-title>
+          <div class="frame" data-video="https://youtu.be/Y1N1R3fzqPc" role="button" tabindex="0" aria-label="Play video">
+            <canvas></canvas>
+            <img class="video-thumb" alt="" loading="lazy">
+            <span class="ratio-tag">Video</span>
+            <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+            <div class="play" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="31" stroke="#F2EDE4" stroke-width="1.5"/><path d="M26 20 L46 32 L26 44 Z" fill="#F2EDE4"/></svg></div>
+          </div>
+          <div class="work-meta">
+            <div>
+              <h3>&nbsp;</h3>
+              <p class="role" data-i18n="r_new">Videography &middot; Edit</p>
+            </div>
+            <span class="year"></span>
+          </div>
+        </div>
+
+        <!-- VIDEO 10 -->
+        <div class="work-card reveal" data-seed="10" data-hue="185" data-auto-title>
+          <div class="frame" data-video="https://youtu.be/dxF4NHaeVno" role="button" tabindex="0" aria-label="Play video">
+            <canvas></canvas>
+            <img class="video-thumb" alt="" loading="lazy">
+            <span class="ratio-tag">Video</span>
+            <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+            <div class="play" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="31" stroke="#F2EDE4" stroke-width="1.5"/><path d="M26 20 L46 32 L26 44 Z" fill="#F2EDE4"/></svg></div>
+          </div>
+          <div class="work-meta">
+            <div>
+              <h3>&nbsp;</h3>
+              <p class="role" data-i18n="r_new">Videography &middot; Edit</p>
+            </div>
+            <span class="year"></span>
+          </div>
+        </div>
+
+        <!-- VIDEO 11 -->
+        <div class="work-card reveal" data-seed="11" data-hue="27" data-auto-title>
+          <div class="frame" data-video="https://youtu.be/1Thzbjce7pc" role="button" tabindex="0" aria-label="Play video">
+            <canvas></canvas>
+            <img class="video-thumb" alt="" loading="lazy">
+            <span class="ratio-tag">Video</span>
+            <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+            <div class="play" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="31" stroke="#F2EDE4" stroke-width="1.5"/><path d="M26 20 L46 32 L26 44 Z" fill="#F2EDE4"/></svg></div>
+          </div>
+          <div class="work-meta">
+            <div>
+              <h3>&nbsp;</h3>
+              <p class="role" data-i18n="r_new">Videography &middot; Edit</p>
+            </div>
+            <span class="year"></span>
+          </div>
+        </div>
+
+        <!-- VIDEO 12 -->
+        <div class="work-card reveal" data-seed="12" data-hue="185" data-auto-title>
+          <div class="frame" data-video="https://youtu.be/TFsGRu6T9p4" role="button" tabindex="0" aria-label="Play video">
+            <canvas></canvas>
+            <img class="video-thumb" alt="" loading="lazy">
+            <span class="ratio-tag">Video</span>
+            <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+            <div class="play" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="31" stroke="#F2EDE4" stroke-width="1.5"/><path d="M26 20 L46 32 L26 44 Z" fill="#F2EDE4"/></svg></div>
+          </div>
+          <div class="work-meta">
+            <div>
+              <h3>&nbsp;</h3>
+              <p class="role" data-i18n="r_new">Videography &middot; Edit</p>
+            </div>
+            <span class="year"></span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="shorts" aria-labelledby="shorts-h">
+    <div class="wrap">
+      <div class="slate"><span class="num">SC.05</span><span class="label" data-i18n="shorts_label">On The Feed</span></div>
+      <div class="shorts-head reveal">
+        <span class="eyebrow" data-i18n="shorts_eyebrow">Short-form</span>
+        <h2 class="disp-md" id="shorts-h">Reels &amp; Shorts</h2>
+        <p class="body-md" style="max-width:52ch" data-i18n="shorts_p">Vertical, native-feeling cuts built for the feed. Tap a phone to watch.</p>
+      </div>
+      <div class="phone-grid reveal">
+        <div class="phone-card">
+          <div class="phone-mockup">
+            <div class="phone-notch" aria-hidden="true"></div>
+            <div class="phone-side-btn power" aria-hidden="true"></div>
+            <div class="phone-side-btn vol-up" aria-hidden="true"></div>
+            <div class="phone-side-btn vol-down" aria-hidden="true"></div>
+            <div class="phone-screen">
+              <div class="frame" data-video="https://youtube.com/shorts/9skvyW17kiQ?feature=share" role="button" tabindex="0" aria-label="Play: UCLL talks">
+                <canvas></canvas>
+                <img class="video-thumb" alt="" loading="lazy">
+                <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+                <div class="play" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="31" stroke="#F2EDE4" stroke-width="1.5"/><path d="M26 20 L46 32 L26 44 Z" fill="#F2EDE4"/></svg></div>
+              </div>
+            </div>
+          </div>
+          <p class="phone-caption">UCLL</p>
+        </div>
+        <div class="phone-card">
+          <div class="phone-mockup">
+            <div class="phone-notch" aria-hidden="true"></div>
+            <div class="phone-side-btn power" aria-hidden="true"></div>
+            <div class="phone-side-btn vol-up" aria-hidden="true"></div>
+            <div class="phone-side-btn vol-down" aria-hidden="true"></div>
+            <div class="phone-screen">
+              <div class="frame" data-video="https://youtube.com/shorts/_QJNTLpQSxE?feature=share" role="button" tabindex="0" aria-label="Play: Kapibara, Nexus September 2026">
+                <canvas></canvas>
+                <img class="video-thumb" alt="" loading="lazy">
+                <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+                <div class="play" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="31" stroke="#F2EDE4" stroke-width="1.5"/><path d="M26 20 L46 32 L26 44 Z" fill="#F2EDE4"/></svg></div>
+              </div>
+            </div>
+          </div>
+          <p class="phone-caption">Nexus</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="values" aria-labelledby="values-h">
+    <div class="wrap">
+      <div class="slate"><span class="num">SC.06</span><span class="label" id="values-h" data-i18n="values_label">Values</span></div>
+      <div class="log">
+        <div class="log-entry reveal">
+          <span class="log-num">LOG.01</span>
+          <div><h3 data-i18n="v1_h">Story First</h3><p data-i18n="v1_p">Every deliverable serves a story before it serves a metric. The metric follows the story, not the other way around.</p></div>
+        </div>
+        <div class="log-entry reveal">
+          <span class="log-num">LOG.02</span>
+          <div><h3 data-i18n="v2_h">Craft + Strategy</h3><p data-i18n="v2_p">Beautiful without a plan is decoration. A plan without craft doesn't get watched. I keep both in the same hands.</p></div>
+        </div>
+        <div class="log-entry reveal">
+          <span class="log-num">LOG.03</span>
+          <div><h3 data-i18n="v3_h">Radical Authenticity</h3><p data-i18n="v3_p">Real people, real brands, real footage. No stock gloss, no filler b-roll standing in for the truth.</p></div>
+        </div>
+        <div class="log-entry reveal">
+          <span class="log-num">LOG.04</span>
+          <div><h3 data-i18n="v4_h">Always Re-Cut</h3><p data-i18n="v4_p">The first edit never ships. Neither does the first strategy. Review, cut, refine, until it earns the watch.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" aria-labelledby="contact-h">
+    <div class="wrap credits">
+      <div class="slate"><span class="num">SC.07</span><span class="label" id="contact-h" data-i18n="contact_label">Roll Credits</span></div>
+      <p class="quote" data-i18n="contact_quote">Got a story to tell or a brand to launch? If our creative values match, let's connect and create.</p>
+      <div class="credits-row">
+        <div class="credit-block">
+          <div class="eyebrow" data-i18n="contact_mail">Directed, shot &amp; strategized by</div>
+          <a class="mail-link" href="mailto:info.davidedituri@gmail.com">info.davidedituri@gmail.com</a>
+        </div>
+        <div class="credit-block">
+          <div class="eyebrow" data-i18n="contact_social">See my work online</div>
+          <ul class="social-list">
+            <li><b>Instagram</b> &mdash; <a href="https://www.instagram.com/davide_dituri" target="_blank" rel="noopener">@davide_dituri</a></li>
+            <li><b>LinkedIn</b> &mdash; <a href="https://www.linkedin.com/in/davidedituri" target="_blank" rel="noopener">/in/davidedituri</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="mailto:info.davidedituri@gmail.com" data-i18n="contact_btn">Send me a message</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer wrap">
+  <span>&copy; <span id="year"></span> Davide Di Turi &middot; <span data-i18n="footer_rights">All rights reserved</span></span>
+  <span data-i18n="footer_built">Built frame by frame</span>
+</footer>
+
+<script>
+/* ===== Language switch NL / EN ===== */
+(function () {
+  var NL = {
+    skip: "Naar de inhoud",
+    nav_about: "Over mij", nav_work: "Werk", nav_shorts: "Shorts", nav_values: "Waarden", nav_contact: "Contact",
+    hero_role: "Creatieve hybride &middot; Marketeer &middot; Contentcreator &middot; Videograaf",
+    hero_tagline: "Strateeg van opleiding, verteller van nature. Ik bouw merken waarvoor mensen stoppen met scrollen.",
+    hero_cta1: "Bekijk portfolio", hero_cta2: "Neem contact op",
+    hero_available: "Beschikbaar voor nieuwe projecten &middot; Limburg, Belgi&euml;",
+    hero_shoton: "Gefilmd op Sony ZV-E10 &amp; FX3 &middot; 17-70 mm &middot; f/2.8 &middot; 24fps &middot; frame per frame gemonteerd",
+    clients_label: "Samenwerkingen", clients_h: "Merken waarmee ik creëerde", clients_cta: "Wil jij erbij?",
+    about_label: "Statement van de regisseur", about_h: "Over Davide",
+    about_img_alt: "Davide Di Turi aan het werk op een laptop in een lederen stoel",
+    about_quote: "“Ik koos nooit &eacute;&eacute;n richting, dus werd ik de brug tussen marketing en content.”",
+    about_p1: "De meeste mensen kiezen &eacute;&eacute;n pad. Ik bouwde een brug tussen twee. Overdag denk ik in funnels, positionering en doelgroeppsychologie. 's Avonds, en vaak ook overdag, sta ik achter de camera op zoek naar het shot dat de scroll stopt.",
+    about_p2: "Ergens tussen strategie en storyboard vond ik het werk dat past: merken bouwen die het bekijken waard zijn, en dat onderbouwen met cijfers. Strategie geeft het werk een reden om te bestaan. De camera geeft het een reden om onthouden te worden.",
+    about_p3: "Als het ertoe doet, doe ik de hele keten zelf: briefing, opname, montage, kleurcorrectie, lancering en meten. Zo gaat er niets verloren tussen het plan en het beeld.",
+    tag1: "Strategie", tag2: "Verhaal", tag3: "Vakmanschap", tag4: "Data",
+    work_label: "Portfolio",
+    r1: "Showreel &middot; Eigen bedrijf &middot; Montage",
+    t2: "Campagne dealer Murcia &mdash; Peugeot Spanje",
+    r2: "Videografie &middot; Campagne",
+    r3: "Videografie &middot; Toerismepromo &middot; Montage",
+    r4: "Event &middot; Content &middot; Reels",
+    t5: "Lancering nieuwe systemen &mdash; Nieuwco",
+    r5: "Videografie &middot; Kleurcorrectie &middot; Highlight reel",
+    r6: "Paid media &middot; Lifestyle &middot; Vastgoed",
+    t7: "Internationalisering &mdash; UCLL",
+    r7: "Videografie &middot; Promo &middot; Montage",
+    r_new: "Videografie &middot; Montage",
+    shorts_label: "Op de feed", shorts_eyebrow: "Kort formaat",
+    shorts_p: "Verticale, native montages gemaakt voor de feed. Tik op een telefoon om te kijken.",
+    values_label: "Waarden",
+    v1_h: "Verhaal eerst", v1_p: "Elk project dient eerst een verhaal en pas dan een cijfer. Het cijfer volgt het verhaal, niet omgekeerd.",
+    v2_h: "Vakmanschap + strategie", v2_p: "Mooi zonder plan is decoratie. Een plan zonder vakmanschap wordt niet bekeken. Ik hou beide in dezelfde handen.",
+    v3_h: "Radicaal echt", v3_p: "Echte mensen, echte merken, echte beelden. Geen stockglans en geen opvul-b-roll in plaats van de waarheid.",
+    v4_h: "Altijd opnieuw knippen", v4_p: "De eerste montage gaat nooit de deur uit. De eerste strategie ook niet. Bekijken, knippen, verfijnen, tot het de kijktijd verdient.",
+    contact_label: "Aftiteling",
+    contact_quote: "Heb je een verhaal te vertellen of een merk te lanceren? Als onze creatieve waarden matchen, laten we samen iets maken.",
+    contact_mail: "Geregisseerd, gefilmd &amp; bedacht door",
+    contact_social: "Bekijk mijn werk online",
+    contact_btn: "Stuur me een bericht",
+    footer_rights: "Alle rechten voorbehouden", footer_built: "Frame per frame gebouwd"
+  };
+  var META = {
+    en: { title: document.title, desc: document.querySelector('meta[name="description"]').content },
+    nl: { title: "Davide Di Turi | Marketeer, Contentcreator & Videograaf",
+          desc: "Portfolio van Davide Di Turi: creatieve hybride tussen marketing, contentcreatie en videografie. Gevestigd in Limburg, België." }
+  };
+
+  // Remember the original English text once
+  var nodes = document.querySelectorAll('[data-i18n]');
+  nodes.forEach(function (el) { el.setAttribute('data-en', el.innerHTML); });
+  var altNodes = document.querySelectorAll('[data-i18n-alt]');
+  altNodes.forEach(function (el) { el.setAttribute('data-en-alt', el.alt); });
+
+  function setLang(lang) {
+    nodes.forEach(function (el) {
+      var key = el.getAttribute('data-i18n');
+      el.innerHTML = (lang === 'nl' && NL[key]) ? NL[key] : el.getAttribute('data-en');
+    });
+    altNodes.forEach(function (el) {
+      var key = el.getAttribute('data-i18n-alt');
+      el.alt = (lang === 'nl' && NL[key]) ? NL[key] : el.getAttribute('data-en-alt');
+    });
+    document.documentElement.lang = lang;
+    document.title = META[lang].title;
+    document.querySelector('meta[name="description"]').content = META[lang].desc;
+    document.querySelectorAll('.lang-toggle button').forEach(function (b) {
+      b.setAttribute('aria-pressed', b.getAttribute('data-lang') === lang ? 'true' : 'false');
+    });
+    try { localStorage.setItem('lang', lang); } catch (e) {}
+  }
+
+  document.querySelectorAll('.lang-toggle button').forEach(function (b) {
+    b.addEventListener('click', function () { setLang(b.getAttribute('data-lang')); });
+  });
+
+  var start = 'en';
+  try {
+    var q = new URLSearchParams(location.search).get('lang');
+    var saved = localStorage.getItem('lang');
+    if (q === 'nl' || q === 'en') start = q;
+    else if (saved === 'nl' || saved === 'en') start = saved;
+    else if ((navigator.language || '').toLowerCase().indexOf('nl') === 0) start = 'nl';
+  } catch (e) {
+    if ((navigator.language || '').toLowerCase().indexOf('nl') === 0) start = 'nl';
+  }
+  setLang(start);
+})();
+
+/* ===== Auto titles for the new YouTube videos ===== */
+(function () {
+  function ytId(url) {
+    var m = url.match(/(?:youtu\.be\/|v=|shorts\/)([\w-]{11})/);
+    return m ? m[1] : null;
+  }
+  document.querySelectorAll('.work-card[data-auto-title]').forEach(function (card) {
+    var frame = card.querySelector('.frame');
+    var id = ytId(frame.getAttribute('data-video') || '');
+    if (!id) return;
+    fetch('https://noembed.com/embed?url=' + encodeURIComponent('https://www.youtube.com/watch?v=' + id))
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        if (!d || !d.title) return;
+        card.querySelector('h3').textContent = d.title;
+        frame.setAttribute('aria-label', 'Play: ' + d.title);
+        if (d.width && d.height) {
+          var tag = card.querySelector('.ratio-tag');
+          tag.textContent = d.height > d.width ? '9:16 · Short' : '16:9 · Film';
+        }
+      })
+      .catch(function () {});
+  });
+})();
+
+document.getElementById('year') && (document.getElementById('year').textContent = new Date().getFullYear());
+</script>
+<script src="script.js"></script>
+</body>
+</html>
