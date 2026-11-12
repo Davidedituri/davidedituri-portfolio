@@ -61,6 +61,54 @@
     .work-card .frame, .work-card .video-thumb { transition: none; }
   }
   .credits .btn-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+
+  /* ===== Nov 2026 refresh: one type system + premium details =====
+     Display (names, card titles): Bricolage Grotesque
+     Section titles: Instrument Serif italic
+     Body: Work Sans
+     Labels, meta, buttons: JetBrains Mono */
+  button, input, select, textarea { font-family: inherit; }
+  .section-head { margin-bottom: var(--space-8); max-width: 60ch; }
+  .section-title,
+  .logo-strip-heading,
+  .shorts-head h2 {
+    font-family: var(--font-serif); font-style: italic; font-weight: 400;
+    font-size: clamp(2rem, 4vw, 3rem); line-height: 1.08; letter-spacing: -.005em;
+    color: var(--fg); text-transform: none;
+  }
+  .section-head .section-title { margin: var(--space-3) 0 var(--space-3); }
+  .section-head p { color: var(--fg-muted); margin: 0; max-width: 52ch; }
+  .about-body .eyebrow { margin-bottom: var(--space-5); }
+
+  /* Logo strip: every logo in one tone, same optical size */
+  @media (min-width: 900px) { .logo-grid { grid-template-columns: repeat(5, 1fr); gap: var(--space-8) var(--space-7); } }
+  .logo-cell img { max-height: 30px; max-width: 170px; opacity: .72; filter: none; }
+  .logo-cell--mark img { max-height: 52px; }
+  .logo-cell--wide img { max-height: 36px; max-width: 190px; }
+  .logo-cell { min-width: 0; }
+  @media (max-width: 639px) {
+    .logo-cell img { max-width: min(120px, 100%); max-height: 26px; }
+    .logo-cell--wide img { max-width: min(150px, 100%); max-height: 32px; }
+    .logo-cell--mark img { max-height: 44px; }
+  }
+  .logo-cell--invert img { filter: invert(1) brightness(1.6); opacity: .72; }
+  .logo-cell:hover img, .logo-cell:focus-visible img { opacity: 1; filter: none; }
+  .logo-cell--invert:hover img, .logo-cell--invert:focus-visible img { opacity: 1; filter: invert(1) brightness(1.6); }
+
+  /* Featured reels: two phones, centred */
+  .shorts-proof {
+    display: inline-flex; align-items: center; gap: 8px; margin-top: var(--space-5);
+    font: 400 .7rem/1 var(--font-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--accent-soft);
+  }
+  @media (min-width: 768px) { .phone-grid { grid-template-columns: repeat(2, minmax(0, 300px)); justify-content: center; } }
+  @media (min-width: 1100px) { .phone-grid { grid-template-columns: repeat(2, minmax(0, 300px)); } }
+  .phone-caption b { display: block; color: var(--fg); font-weight: 400; margin-bottom: 4px; }
+
+  .kit-line {
+    margin-top: var(--space-5); padding-top: var(--space-5); border-top: 1px solid var(--border);
+    font: 400 .74rem/1.7 var(--font-mono); letter-spacing: .06em; color: var(--fg-muted); text-transform: uppercase;
+  }
+  .kit-line b { color: var(--accent-soft); font-weight: 400; }
 </style>
 </head>
 <body>
@@ -119,7 +167,7 @@
         <a href="#contact" class="btn btn-ghost" data-i18n="hero_cta2">Get in touch</a>
       </div>
       <div class="available-pill" data-i18n="hero_available">Open for new projects &middot; Limburg, Belgium</div>
-      <div class="hero-shoton" data-i18n="hero_shoton">Shot on Sony ZV-E10 &amp; FX3 &middot; 17-70 mm &middot; f/2.8 &middot; 24fps &middot; edited frame by frame</div>
+      <div class="hero-shoton" data-i18n="hero_shoton">Shot on Sony ZV-E1, ZV-E10 &amp; FX3 &middot; 24fps &middot; edited frame by frame</div>
     </div>
   </section>
 
@@ -129,12 +177,16 @@
       <h2 class="logo-strip-heading reveal" data-i18n="clients_h">Brands I created with</h2>
 
       <div class="logo-grid reveal">
-        <span class="logo-cell logo-cell--chip" tabindex="0"><img src="nieuwco.png" alt="Nieuwco" width="140" height="40" loading="lazy"></span>
-        <span class="logo-cell" tabindex="0"><img src="logo-pkp26.webp" alt="PKP26" width="140" height="40" loading="lazy"></span>
-        <span class="logo-cell logo-cell--chip" tabindex="0"><img src="logo-santamar-2.png" alt="Santamar" width="140" height="40" loading="lazy"></span>
-        <span class="logo-cell" tabindex="0"><img src="logo_route_38_web_small.png" alt="Route 38" width="140" height="40" loading="lazy"></span>
-        <span class="logo-cell" tabindex="0"><img src="ceder-invest-logo-dark.svg" alt="Ceder Invest" width="140" height="40" loading="lazy"></span>
-        <span class="logo-cell" tabindex="0"><img src="PNG-Logo_UCLL_negatief_RGB.png" alt="UCLL" width="140" height="40" loading="lazy"></span>
+        <span class="logo-cell logo-cell--wide" tabindex="0"><img src="tomorrowland-academy-logo-white.png" alt="Tomorrowland Academy" width="150" height="32" loading="lazy"></span>
+        <span class="logo-cell logo-cell--mark" tabindex="0"><img src="logo-pukkelpop-white.png" alt="Pukkelpop" width="36" height="46" loading="lazy"></span>
+        <span class="logo-cell" tabindex="0"><img src="logo-algeco-white.png" alt="Algeco" width="94" height="30" loading="lazy"></span>
+        <span class="logo-cell" tabindex="0"><img src="logo-nieuwco-white.png" alt="Nieuwco" width="150" height="26" loading="lazy"></span>
+        <span class="logo-cell logo-cell--mark" tabindex="0"><img src="logo-ceder-white.png" alt="Ceder Real Estate" width="56" height="46" loading="lazy"></span>
+        <span class="logo-cell logo-cell--wide" tabindex="0"><img src="logo-ucll-white.png" alt="UCLL" width="120" height="30" loading="lazy"></span>
+        <span class="logo-cell" tabindex="0"><img src="logo-santamar-white.png" alt="Santamar" width="150" height="34" loading="lazy"></span>
+        <span class="logo-cell" tabindex="0"><img src="logo-monsana-white.png" alt="Monsana" width="150" height="30" loading="lazy"></span>
+        <span class="logo-cell" tabindex="0"><img src="logo-mirabel-white.png" alt="Villa Mirabel" width="140" height="30" loading="lazy"></span>
+        <span class="logo-cell logo-cell--mark" tabindex="0"><img src="logo-route38-white.png" alt="Route 38" width="44" height="46" loading="lazy"></span>
       </div>
 
       <a href="#contact" class="logo-strip-cta"><span data-i18n="clients_cta">Ready to join the list?</span> <span aria-hidden="true">&#9656;</span></a>
@@ -156,7 +208,7 @@
         </div>
 
         <div class="about-body reveal">
-          <h2 id="about-h" style="font-size:1.1rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:var(--space-5);" data-i18n="about_h">About Davide</h2>
+          <h2 id="about-h" class="eyebrow" data-i18n="about_h">About Davide</h2>
           <p data-i18n="about_p1">Most people pick a lane. I built a bridge between two. By day I think in funnels, positioning and audience psychology. By night, and often by day too, I'm behind a camera chasing the shot that stops the scroll.</p>
           <p data-i18n="about_p2">Somewhere between strategy and storyboard I found the work that fits: building brands worth watching, and backing them with the numbers. Strategy gives the work a reason to exist. The camera gives it a reason to be remembered.</p>
           <p data-i18n="about_p3">When it matters, I run the full chain myself: brief, shoot, edit, grade, launch, measure. Nothing gets lost between the plan and the frame.</p>
@@ -166,6 +218,7 @@
             <span class="tag" data-i18n="tag3">Craft</span>
             <span class="tag" data-i18n="tag4">Data</span>
           </div>
+          <p class="kit-line" data-i18n="kit">Kit &mdash; <b>Sony ZV-E1</b> (A-cam) &middot; <b>Sony ZV-E10</b> (B-cam) &middot; DJI action cam &middot; R&Oslash;DE audio</p>
         </div>
       </div>
     </div>
@@ -174,6 +227,11 @@
   <section id="work" aria-labelledby="work-h">
     <div class="wrap">
       <div class="slate"><span class="num">SC.04</span><span class="label" id="work-h" data-i18n="work_label">Portfolio</span></div>
+      <div class="section-head reveal">
+        <span class="eyebrow" data-i18n="work_eyebrow">Selected work</span>
+        <h2 class="section-title" data-i18n="work_h">Films, campaigns &amp; stories</h2>
+        <p data-i18n="work_p">Brands, places and events in Belgium, Spain and beyond. Click a frame to watch.</p>
+      </div>
 
       <div class="work-grid">
 
@@ -287,7 +345,7 @@
 
         <!-- VIDEO 7: Hogeschool UCLL -->
         <div class="work-card reveal" data-seed="7" data-hue="27">
-          <div class="frame" data-video="https://youtu.be/1fIhnMQI9pk" data-poster="ucll-poster.jpg" role="button" tabindex="0" aria-label="Play: Internationalisation, UCLL University of Applied Sciences">
+          <div class="frame" data-video="ucll-internationalisering.mp4" data-poster="ucll-poster.jpg" role="button" tabindex="0" aria-label="Play: Internationalisation, UCLL University of Applied Sciences">
             <canvas></canvas>
             <img class="video-thumb" alt="" loading="lazy">
             <span class="ratio-tag">16:9 &middot; Promo</span>
@@ -406,9 +464,10 @@
     <div class="wrap">
       <div class="slate"><span class="num">SC.05</span><span class="label" data-i18n="shorts_label">On The Feed</span></div>
       <div class="shorts-head reveal">
-        <span class="eyebrow" data-i18n="shorts_eyebrow">Short-form</span>
-        <h2 class="disp-md" id="shorts-h">Reels &amp; Shorts</h2>
-        <p class="body-md" style="max-width:52ch" data-i18n="shorts_p">Vertical, native-feeling cuts built for the feed. Tap a phone to watch.</p>
+        <span class="eyebrow" data-i18n="shorts_eyebrow">Short-form &middot; Tomorrowland</span>
+        <h2 class="disp-md" id="shorts-h" data-i18n="shorts_h">Reels for Tomorrowland</h2>
+        <p class="body-md" style="max-width:52ch" data-i18n="shorts_p">Filmed and edited on location for the Tomorrowland DJ Academy, from bootcamps in Belgium to Los Angeles. Tap a phone to watch.</p>
+        <span class="shorts-proof" data-i18n="shorts_proof">100K&ndash;500K views per video</span>
       </div>
       <div class="phone-grid reveal">
         <div class="phone-card">
@@ -418,7 +477,7 @@
             <div class="phone-side-btn vol-up" aria-hidden="true"></div>
             <div class="phone-side-btn vol-down" aria-hidden="true"></div>
             <div class="phone-screen">
-              <div class="frame" data-video="https://youtube.com/shorts/9skvyW17kiQ?feature=share" role="button" tabindex="0" aria-label="Play: UCLL talks">
+              <div class="frame" data-video="https://youtube.com/shorts/6B4mSBRmngk" role="button" tabindex="0" aria-label="Play: Solovida x Tomorrowland Academy, network event bootcamp 2026">
                 <canvas></canvas>
                 <img class="video-thumb" alt="" loading="lazy">
                 <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
@@ -426,7 +485,7 @@
               </div>
             </div>
           </div>
-          <p class="phone-caption">UCLL</p>
+          <p class="phone-caption"><b>Solovida &times; TML Academy</b>Network event &middot; Bootcamp 2026</p>
         </div>
         <div class="phone-card">
           <div class="phone-mockup">
@@ -435,7 +494,7 @@
             <div class="phone-side-btn vol-up" aria-hidden="true"></div>
             <div class="phone-side-btn vol-down" aria-hidden="true"></div>
             <div class="phone-screen">
-              <div class="frame" data-video="https://youtube.com/shorts/_QJNTLpQSxE?feature=share" role="button" tabindex="0" aria-label="Play: Kapibara, Nexus September 2026">
+              <div class="frame" data-video="https://youtube.com/shorts/WvbrBzflCvg" role="button" tabindex="0" aria-label="Play: Tomorrowland Core LA winner, 2026 recap">
                 <canvas></canvas>
                 <img class="video-thumb" alt="" loading="lazy">
                 <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
@@ -443,7 +502,7 @@
               </div>
             </div>
           </div>
-          <p class="phone-caption">Nexus</p>
+          <p class="phone-caption"><b>TML Core &middot; Los Angeles</b>Winner recap &middot; 2026</p>
         </div>
       </div>
     </div>
@@ -452,6 +511,10 @@
   <section id="values" aria-labelledby="values-h">
     <div class="wrap">
       <div class="slate"><span class="num">SC.06</span><span class="label" id="values-h" data-i18n="values_label">Values</span></div>
+      <div class="section-head reveal">
+        <span class="eyebrow" data-i18n="values_eyebrow">Principles</span>
+        <h2 class="section-title" data-i18n="values_h">How I work</h2>
+      </div>
       <div class="log">
         <div class="log-entry reveal">
           <span class="log-num">LOG.01</span>
@@ -512,16 +575,20 @@
     hero_tagline: "Strateeg van opleiding, verteller van nature. Ik bouw merken waarvoor mensen stoppen met scrollen.",
     hero_cta1: "Bekijk portfolio", hero_cta2: "Neem contact op",
     hero_available: "Beschikbaar voor nieuwe projecten &middot; Limburg, Belgi&euml;",
-    hero_shoton: "Gefilmd op Sony ZV-E10 &amp; FX3 &middot; 17-70 mm &middot; f/2.8 &middot; 24fps &middot; frame per frame gemonteerd",
+    hero_shoton: "Gefilmd op Sony ZV-E1, ZV-E10 &amp; FX3 &middot; 24fps &middot; frame per frame gemonteerd",
     clients_label: "Samenwerkingen", clients_h: "Merken waarmee ik creëerde", clients_cta: "Wil jij erbij?",
     about_label: "Statement van de regisseur", about_h: "Over Davide",
     about_img_alt: "Davide Di Turi aan het werk op een laptop in een lederen stoel",
     about_quote: "“Ik koos nooit &eacute;&eacute;n richting, dus werd ik de brug tussen marketing en content.”",
-    about_p1: "De meeste mensen kiezen &eacute;&eacute;n pad. Ik bouwde een brug tussen twee. Overdag denk ik in funnels, positionering en persona's. 's Avonds, en vaak ook overdag, sta ik achter de camera op zoek naar het shot dat de scroll stopt.",
+    about_p1: "De meeste mensen kiezen &eacute;&eacute;n pad. Ik bouwde een brug tussen twee. Overdag denk ik in funnels, positionering en doelgroeppsychologie. 's Avonds, en vaak ook overdag, sta ik achter de camera op zoek naar het shot dat de scroll stopt.",
     about_p2: "Ergens tussen strategie en storyboard vond ik het werk dat past: merken bouwen die het bekijken waard zijn, en dat onderbouwen met cijfers. Strategie geeft het werk een reden om te bestaan. De camera geeft het een reden om onthouden te worden.",
     about_p3: "Als het ertoe doet, doe ik de hele keten zelf: briefing, opname, montage, kleurcorrectie, lancering en meten. Zo gaat er niets verloren tussen het plan en het beeld.",
     tag1: "Strategie", tag2: "Verhaal", tag3: "Vakmanschap", tag4: "Data",
+    kit: "Kit &mdash; <b>Sony ZV-E1</b> (A-cam) &middot; <b>Sony ZV-E10</b> (B-cam) &middot; DJI-actiecamera &middot; R&Oslash;DE-audio",
     work_label: "Portfolio",
+    work_eyebrow: "Geselecteerd werk",
+    work_h: "Films, campagnes &amp; verhalen",
+    work_p: "Merken, plekken en events in Belgi&euml;, Spanje en verder. Klik op een beeld om te kijken.",
     r1: "Showreel &middot; Eigen bedrijf &middot; Montage",
     t2: "Campagne dealer Murcia &mdash; Peugeot Spanje",
     r2: "Videografie &middot; Campagne",
@@ -533,12 +600,16 @@
     t7: "Internationalisering &mdash; UCLL",
     r7: "Videografie &middot; Promo &middot; Montage",
     r_new: "Videografie &middot; Montage",
-    shorts_label: "Op de feed", shorts_eyebrow: "Kort formaat",
-    shorts_p: "Verticale, native montages gemaakt voor de feed. Tik op een telefoon om te kijken.",
+    shorts_label: "Op de feed", shorts_eyebrow: "Kort formaat &middot; Tomorrowland",
+    shorts_h: "Reels voor Tomorrowland",
+    shorts_p: "Op locatie gefilmd en gemonteerd voor de Tomorrowland DJ Academy, van bootcamps in Belgi&euml; tot Los Angeles. Tik op een telefoon om te kijken.",
+    shorts_proof: "100K&ndash;500K views per video",
     values_label: "Waarden",
+    values_eyebrow: "Principes", values_h: "Zo werk ik",
     v1_h: "Verhaal eerst", v1_p: "Elk project dient eerst een verhaal en pas dan een cijfer. Het cijfer volgt het verhaal, niet omgekeerd.",
     v2_h: "Vakmanschap + strategie", v2_p: "Mooi zonder plan is decoratie. Een plan zonder vakmanschap wordt niet bekeken. Ik hou beide in dezelfde handen.",
-    v3_h: "De beste edit", v4_p: "De eerste montage gaat nooit de deur uit. De eerste strategie ook niet. Bekijken, knippen, verfijnen, tot het de kijktijd verdient.",
+    v3_h: "Radicaal echt", v3_p: "Echte mensen, echte merken, echte beelden. Geen stockglans en geen opvul-b-roll in plaats van de waarheid.",
+    v4_h: "Altijd opnieuw knippen", v4_p: "De eerste montage gaat nooit de deur uit. De eerste strategie ook niet. Bekijken, knippen, verfijnen, tot het de kijktijd verdient.",
     contact_label: "Aftiteling",
     contact_quote: "Heb je een verhaal te vertellen of een merk te lanceren? Als onze creatieve waarden matchen, laten we samen iets maken.",
     contact_mail: "Geregisseerd, gefilmd &amp; bedacht door",
